@@ -57,6 +57,14 @@ autocmd("BufEnter", {
       end
     end,
   })
+ autocmd("VimLeavePre", {
+    desc = "Save session on close",
+    group = augroup("resession_auto_save", { clear = true }),
+    callback = function()
+        local save = require("resession").save
+        save("Last Session", { notify = false })
+    end,
+  })
 
 
 vim.g.netrw_browse_split = 0

@@ -26,7 +26,7 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
-vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
@@ -56,6 +56,7 @@ end)
 vim.keymap.set("n", "<leader>psa", function()
     local file = vim.fn.expand "%"
     local command = string.format("!docker exec gf_back sh -c 'php vendor/bin/psalm -c psalm-local.xml'", file)
+        -- or                            , branch = '0.1.x',
     vim.notify(command)
     vim.cmd(command)
 end)
@@ -68,4 +69,5 @@ vim.keymap.set("n", "<leader>tc", "<esc><cmd>lua require('neotest').output_panel
 vim.keymap.set("n", "<leader>te", "<esc><cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>")
 vim.keymap.set("n", "<leader>tm", "<esc><cmd>lua require('neotest').run.run()<CR>")
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>")
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>")
 
