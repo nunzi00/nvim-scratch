@@ -67,5 +67,5 @@ vim.keymap.set("n", "<leader>to", "<esc><cmd>lua require('neotest').output_panel
 vim.keymap.set("n", "<leader>tc", "<esc><cmd>lua require('neotest').output_panel.close()<CR>")
 vim.keymap.set("n", "<leader>te", "<esc><cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>")
 vim.keymap.set("n", "<leader>tm", "<esc><cmd>lua require('neotest').run.run()<CR>")
-
+vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>")
 
