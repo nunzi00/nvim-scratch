@@ -73,3 +73,12 @@ vim.keymap.set("n", "<leader>ff", "<esc><cmd>Telescope find_files<cr>")
 vim.keymap.set('n', '<leader>fg', "<esc><cmd>Telescope live_grep<cr>")
 vim.keymap.set('n', '<leader>fb', "<esc><cmd>Telescope buffers<cr>")
 vim.keymap.set('n', '<leader>fh', "<esc><cmd>Telescope help_tags<cr>")
+vim.keymap.set('n', '<leader>o', function()
+    if vim.bo.filetype == "neo-tree" then
+        vim.cmd.wincmd "p"
+    else
+        vim.cmd.Neotree "focus"
+    end
+end)
+vim.keymap.set("n", "<C-q>", "<cmd>qa!<cr>")
+vim.keymap.set("n", "<C-s>", "<cmd>w!<cr>")
