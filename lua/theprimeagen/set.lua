@@ -47,3 +47,5 @@ vim.filetype.add {
         ["Jenkinsfile"] = "groovy",
     },
 }
+vim.opt.autochdir = true
+

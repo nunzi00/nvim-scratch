@@ -6,7 +6,7 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
-use("nvim-lua/plenary.nvim")
+    use("nvim-lua/plenary.nvim")
     use {
         'nvim-telescope/telescope.nvim'
         , tag = '0.1.4',
@@ -112,6 +112,25 @@ use("nvim-lua/plenary.nvim")
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",
             -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+            {
+                's1n7ax/nvim-window-picker',
+                version = '2.*',
+                config = function()
+                    require 'window-picker'.setup({
+                        filter_rules = {
+                            include_current_win = false,
+                            autoselect_one = true,
+                            -- filter using buffer options
+                            bo = {
+                                -- if the file type is one of following, the window will be ignored
+                                filetype = { 'neo-tree', "neo-tree-popup", "notify" },
+                                -- if the buffer type is one of following, the window will be ignored
+                                buftype = { 'terminal', "quickfix" },
+                            },
+                        },
+                    })
+                end,
+            },
         }
     }
     use({
@@ -120,9 +139,31 @@ use("nvim-lua/plenary.nvim")
         requires = {
             "nvim-lua/plenary.nvim",
         },
-   })
+    })
     use {
-      'stevearc/resession.nvim',
-      config = function() require('resession').setup() end
+        'stevearc/resession.nvim',
+        config = function() require('resession').setup() end
+    }
+    use {
+        'altermo/ultimate-autopair.nvim',
+        event = { 'InsertEnter', 'CmdlineEnter' },
+        branch = 'v0.6', --recomended as each new version will have breaking changes
+        config = function()
+            require('ultimate-autopair').setup({
+                --Config goes here
+            })
+        end,
+    }
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            vim.o.timeout = true
+            vim.o.timeoutlen = 300
+            require("which-key").setup {
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
     }
 end)

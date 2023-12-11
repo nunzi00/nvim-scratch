@@ -81,4 +81,6 @@ vim.keymap.set('n', '<leader>o', function()
     end
 end)
 vim.keymap.set("n", "<C-q>", "<cmd>qa!<cr>")
+vim.keymap.set("n", "<leader>q", "<cmd>q!<cr>")
 vim.keymap.set("n", "<C-s>", "<cmd>w!<cr>")
+vim.keymap.set("n", "|", "<cmd>vs<cr>")
