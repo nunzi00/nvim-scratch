@@ -1,4 +1,3 @@
-
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
@@ -9,10 +8,10 @@ vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("x", "<leader>p", [["_dP]])
 
 -- next greatest remap ever : asbjornHaland
-vim.keymap.set({"n", "v"}, "<leader>y", [["+y]])
+vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 vim.keymap.set("n", "<leader>Y", [["+Y]])
 
-vim.keymap.set({"n", "v"}, "<leader>d", [["_d]])
+vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
@@ -56,7 +55,7 @@ end)
 vim.keymap.set("n", "<leader>psa", function()
     local file = vim.fn.expand "%"
     local command = string.format("!docker exec gf_back sh -c 'php vendor/bin/psalm -c psalm-local.xml'", file)
-        -- or                            , branch = '0.1.x',
+    -- or                            , branch = '0.1.x',
     vim.notify(command)
     vim.cmd(command)
 end)
@@ -70,4 +69,7 @@ vim.keymap.set("n", "<leader>te", "<esc><cmd>lua require('neotest').run.run(vim.
 vim.keymap.set("n", "<leader>tm", "<esc><cmd>lua require('neotest').run.run()<CR>")
 vim.keymap.set("n", "<leader>gg", "<cmd>LazyGit<CR>")
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>")
-
+vim.keymap.set("n", "<leader>ff", "<esc><cmd>Telescope find_files<cr>")
+vim.keymap.set('n', '<leader>fg', "<esc><cmd>Telescope live_grep<cr>")
+vim.keymap.set('n', '<leader>fb', "<esc><cmd>Telescope buffers<cr>")
+vim.keymap.set('n', '<leader>fh', "<esc><cmd>Telescope help_tags<cr>")
