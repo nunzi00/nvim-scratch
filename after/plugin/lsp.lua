@@ -90,6 +90,11 @@ vim.keymap.set("n", "<leader>gy", function() require("telescope.builtin").lsp_ty
     vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("n", "<leader>lh", function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("v", "<leader>la", function() vim.lsp.buf.code_action() end, opts)
+    vim.keymap.set(
+	{"n", "x"},
+	"<leader>rr",
+	function() require('telescope').extensions.refactoring.refactors() end
+)
 end)
 
 lsp.setup()

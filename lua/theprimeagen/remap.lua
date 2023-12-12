@@ -25,6 +25,11 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+    vim.keymap.set(
+	{"n", "x"},
+	"<leader>rr",
+	function() require('telescope').extensions.refactoring.refactors() end
+)
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 -- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
@@ -62,7 +67,7 @@ end)
 vim.keymap.set("n", "<leader>ca", function()
     vim.lsp.buf.code_action { apply = true }
 end)
-vim.keymap.set("n", "<leader>fr", "<cmd>TextCaseOpenTelescope<CR>")
+vim.keymap.set("n", "<leader>fr", "<cmd>TextCaseOpenTelescopeQuickChange<CR>")
 vim.keymap.set("n", "<leader>to", "<esc><cmd>lua require('neotest').output_panel.open()<CR>")
 vim.keymap.set("n", "<leader>tc", "<esc><cmd>lua require('neotest').output_panel.close()<CR>")
 vim.keymap.set("n", "<leader>te", "<esc><cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>")
@@ -81,10 +86,11 @@ vim.keymap.set('n', '<leader>o', function()
     end
 end)
 vim.keymap.set("n", "<C-q>", "<cmd>qa!<cr>")
-vim.keymap.set("n", "<leader>q", "<cmd>q!<cr>")
+vim.keymap.set("n", "<leader>q", "<cmd>bd<cr>")
 vim.keymap.set("n", "<C-s>", "<cmd>w!<cr>")
 vim.keymap.set("n", "|", "<cmd>vs<cr>")
 vim.keymap.set("n", "bp", "<cmd>bp<cr>")
 vim.keymap.set("n", "bn", "<cmd>bn<cr>")
-vim.keymap.set("n", "bd", "<cmd>bd<cr>")
+vim.keymap.set("n", "be", "<cmd>be<cr>")
+vim.keymap.set("n", "bd", "<cmd>Bdelete<cr>")
 
