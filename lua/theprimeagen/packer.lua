@@ -167,17 +167,24 @@ return require('packer').startup(function(use)
         end
     }
     use {
-  'nvim-lualine/lualine.nvim',
-  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-}
-    use { "folke/lsp-colors.nvim",  config = function()
-      require("lsp-colors").setup {
-         Error       = "#db4b4b",
-         Warning     = "#e0af68",
-         Information = "#0db9d7",
-         Hint        = "#10B981"
-      }
-   end
-}
-
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+    use { "folke/lsp-colors.nvim", config = function()
+        require("lsp-colors").setup {
+            Error       = "#db4b4b",
+            Warning     = "#e0af68",
+            Information = "#0db9d7",
+            Hint        = "#10B981"
+        }
+    end
+    }
+    use{"moll/vim-bbye"}
+    use({
+	"L3MON4D3/LuaSnip",
+	-- follow latest release.
+	tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!:).
+	run = "make install_jsregexp"
+})
 end)
