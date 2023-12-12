@@ -108,10 +108,11 @@ local mappings = {
     -- },
     ["f"]       = {
         name = "Telescope",
-        b = { "", "Telescope buffers" },
-        f = { "", "Telescope find files" },
-        g = { "", "Telescope live grep" },
-        h = { "", "Telescope help tags" },
+        b = { "<cmd>Telescope buffers<cr>", "Telescope buffers" },
+        f = { "<cmd>Telescope find_files<cr>", "Telescope find files" },
+        g = { "<cmd>Telescope live_grep<cr>", "Telescope live grep" },
+        h = { "<cmd>Telescope help_tags<cr>", "Telescope help tags" },
+        o = { "<cmd>Telescope oldfiles<cr>", "Telescope Old Files" },
         r = { "<cmd>TextCaseOpenTelescope<CR>", "Telescope TextCase" },
     },
     ["g"]       = {
@@ -124,7 +125,7 @@ local mappings = {
         -- s = { "", "" },
     },
     ["l"]       = {
-        name = "",
+        name = "LSP",
         f = { "vim.lsp.buf.format", "Format Buffer" },
         i = { "<cmd>LspInfo<CR>", "Lsp Info" },
         D = { "<cmd>lua require('telescope.builtin').diagnostics()", "Lsp Diagonistic" },
@@ -135,21 +136,15 @@ local mappings = {
         name = "",
         r = { "<cmd>CellularAutomaton make_it_rain<CR>", "Make it rain" },
     },
-    ["p"]       = {
-        -- name = "",
-        f = { "<cmd>lua require('telescope.builtin').find_files<cr>", "Find Files" },
-        -- s = { "<cmd>lua require('telescope.builtin').grep_string", "Find word" },
-        -- v = { "", "" },
-    },
     -- ["s"]       = {
-        -- name = "",
-        -- d = { "", "" },
-        -- l = { "", "" },
-        -- s = { "", "" },
+        -- name = "Sessions",
+        -- d = { "", "Delete" },
+        -- l = { "", "Load" },
+        -- s = { "", "Save" },
     -- },
     ["t"]       = {
         name = "Test",
-        a = { "", "Docker Unit Test" },
+        -- a = { "", "Docker Unit Test" },
         c = { "<esc><cmd>lua require('neotest').output_panel.close()<CR>", "Close neotest panel" },
         e = { "<esc><cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "Test File" },
         m = { "<esc><cmd>lua require('neotest').run.run()<CR>", "Test Method" },
@@ -165,13 +160,6 @@ local mappings = {
         d = { "<cmd>lua require('trouble').toggle('document_diagnostics')<cr>", "QuixkFix Document" },
         q = { "<cmd>TroubleToggle quickfix<cr>", "Toggle QuixkFix" },
     },
-    -- ["z"]       = {
-    --     name = "ZenMode",
-    --     Z = { "", "" },
-    --     z = { "", "" },
-    -- },
-
-
 
 }
 
