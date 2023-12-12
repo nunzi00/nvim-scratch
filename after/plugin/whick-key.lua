@@ -83,19 +83,23 @@ local mappings = {
     ["|"] = { "<cmd>vs<cr>", "Vertical Split" },
     ["a"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Harpoon Add File" },
     ["b"] = {
-        name = "Buffers",
-        p = { "<cmd>bp<cr>", "Previous" },
-        n = { "<cmd>bn<cr>", "Next" },
-        d = { "<cmd>bd<cr>", "Delete" },
-        -- s = { "", "" },
+        name = "Buffers & Tabs",
+        p = { "<cmd>bp<cr>", "Buffer Previous" },
+        n = { "<cmd>bn<cr>", "Buffer Next" },
+        d = { "<cmd>Bdelete<cr>", "Buffer Delete" },
+        o = { "<cmd>Bwipeout<cr>", "Buffer Wipeout" },
+        q = { "<cmd>tabp<cr>", "TAB Previous" },
+        w = { "<cmd>tabn<cr>", "TAB Next" },
+        e = { "<cmd>tabe<cr>", "TAB New" },
+        r = { "<cmd>tabo<cr>", "TAB Close Others" },
     },
     -- ["d"]       = { '[["_d]]', "_d" },
     ["e"] = { "<cmd>Neotree toggle<cr>", "Neotree toggle" },
     ["j"] = { "<cmd>lprev<CR>zz", "lprevzz" },
     ["k"] = { "<cmd>lnext<CR>zz", "lnextzz" },
     -- ["o"]       = { "", "" },
-    ["q"] = { "<cmd>wqall!<CR>", "Quit" },       -- Quit Neovim after saving the file
-    ["Q"] = { "<nop>", "Close modal" },          -- Quit Neovim after saving the file
+    ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
+    ["Q"] = { "<nop>", "Close modal" },    -- Quit Neovim after saving the file
     -- ["r"]       = { "[[:%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left>]]", "Replace word" },
     -- ["u"]       = { "", "" },
     -- ["y"]       = { "", "" },
@@ -113,13 +117,13 @@ local mappings = {
         g = { "<cmd>Telescope live_grep<cr>", "Telescope live grep" },
         h = { "<cmd>Telescope help_tags<cr>", "Telescope help tags" },
         o = { "<cmd>Telescope oldfiles<cr>", "Telescope Old Files" },
-        r = { "<cmd>TextCaseOpenTelescope<CR>", "Telescope TextCase" },
+        r = { "<cmd>TextCaseOpenTelescopeQuickChange<CR>", "Telescope TextCase" },
+        w = { "<cmd>Telescope grep_string<CR>", "Telescope Grep current word" },
     },
     ["g"] = {
         name = "Git",
         g = { "<cmd>LazyGit<CR>", "LazyGit" },
         R = { "<cmd>lua require('trouble').toggle('lsp_references')<cr>", "QuixkFix Lsp References" },
-        -- s = { "", "" },
     },
     ["l"] = {
         name = "LSP",
@@ -137,12 +141,12 @@ local mappings = {
         name = "",
         r = { "<cmd>CellularAutomaton make_it_rain<CR>", "Make it rain" },
     },
-    -- ["s"]       = {
-    -- name = "Sessions",
-    -- d = { "", "Delete" },
-    -- l = { "", "Load" },
-    -- s = { "", "Save" },
-    -- },
+    ["s"] = {
+        name = "Sessions",
+        d = { "<cmd>lua require('resession').delete()", "Delete" },
+        l = { "<cmd>lua require('resession').load()<cr>", "Load" },
+        s = { "<cmd>lua require('resession').save()<cr>", "Save" },
+    },
     ["t"] = {
         name = "Test",
         -- a = { "", "Docker Unit Test" },
@@ -166,3 +170,5 @@ local mappings = {
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
+vim.o.timeout = true
+vim.o.timeoutlen = 300
