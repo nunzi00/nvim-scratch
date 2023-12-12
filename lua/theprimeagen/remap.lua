@@ -18,7 +18,7 @@ vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-vim.keymap.set("n", "<leader>f", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 
 vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
@@ -26,7 +26,7 @@ vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
 vim.keymap.set("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+-- vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 vim.keymap.set("n", "<leader>mr", "<cmd>CellularAutomaton make_it_rain<CR>");
 
@@ -46,9 +46,9 @@ end)
 vim.keymap.set("n", "<leader>ta", function()
     vim.cmd "!docker exec gf_back sh -c 'APP_ENV=test php vendor/bin/phpunit'"
 end)
-vim.keymap.set("n", "<leader>ps", function()
+vim.keymap.set("n", "<leader>ct", function()
     local file = vim.fn.expand "%"
-    local command = string.format("!docker exec gf_back sh -c 'php vendor/bin/psalm -c psalm-local.xml %s'", file)
+    local command = string.format("!docker exec gf_back sh -c 'php vendor/bin/psalm -c psalm.xml %s'", file)
     vim.notify(command)
     vim.cmd(command)
 end)
@@ -84,3 +84,7 @@ vim.keymap.set("n", "<C-q>", "<cmd>qa!<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>q!<cr>")
 vim.keymap.set("n", "<C-s>", "<cmd>w!<cr>")
 vim.keymap.set("n", "|", "<cmd>vs<cr>")
+vim.keymap.set("n", "bp", "<cmd>bp<cr>")
+vim.keymap.set("n", "bn", "<cmd>bn<cr>")
+vim.keymap.set("n", "bd", "<cmd>bd<cr>")
+
