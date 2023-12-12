@@ -10,7 +10,7 @@ vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -33,6 +33,7 @@ vim.opt.colorcolumn = "80"
 vim.g.cmp_enabled = true
 vim.g.diagnostics_mode = 3
 vim.g.icons_enabled = true
+vim.g.autopairs_enabled = true
 
 vim.opt.colorcolumn = { "120" }
 vim.opt.wrap = true

@@ -62,7 +62,7 @@ end)
 vim.keymap.set("n", "<leader>ca", function()
     vim.lsp.buf.code_action { apply = true }
 end)
-vim.keymap.set("n", "<leader>tr", "<cmd>TextCaseOpenTelescope<CR>")
+vim.keymap.set("n", "<leader>fr", "<cmd>TextCaseOpenTelescope<CR>")
 vim.keymap.set("n", "<leader>to", "<esc><cmd>lua require('neotest').output_panel.open()<CR>")
 vim.keymap.set("n", "<leader>tc", "<esc><cmd>lua require('neotest').output_panel.close()<CR>")
 vim.keymap.set("n", "<leader>te", "<esc><cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>")
