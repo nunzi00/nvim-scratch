@@ -10,7 +10,7 @@ require('lualine').setup {
         },
         ignore_focus = {},
         always_divide_middle = true,
-        globalstatus = false,
+        globalstatus = true,
         refresh = {
             statusline = 1000,
             tabline = 1000,
@@ -43,7 +43,7 @@ require('lualine').setup {
         } },
         lualine_b = { 'branch', 'diff', 'diagnostics' },
         lualine_c = { 'filename' },
-        lualine_x = { 'encoding', 'fileformat', 'filetype', "require'lsp-status'.status()" },
+        lualine_x = { 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location', 'tabs'}
     },
@@ -56,7 +56,7 @@ require('lualine').setup {
         lualine_z = {}
     },
     tabline = {
-        lualine_a = { 'filename' },
+        lualine_a = {},
         lualine_b = {},
         lualine_c = {},
         lualine_x = {'filename'},
@@ -71,7 +71,9 @@ require('lualine').setup {
         lualine_y = {},
         lualine_z = {}
     },
-    inactive_winbar = {},
+    inactive_winbar = {
+        lualine_a = {'filename'},
+    },
     extensions = {
         'fzf',
         'neo-tree',
