@@ -86,7 +86,18 @@ return require('packer').startup(function(use)
         },
     }
     use { "catppuccin/nvim", as = "catppuccin" }
-    use("phpactor/phpactor")
+---     use { "phpactor/phpactor" }
+ use({
+  "gbprod/phpactor.nvim",
+  requires = {
+    "nvim-lua/plenary.nvim", -- required to update phpactor
+    "neovim/nvim-lspconfig" -- required to automaticly register lsp serveur
+  },
+  config = function()
+    require("phpactor").setup({
+    })
+  end
+})
     use { "johmsalas/text-case.nvim",
         config = function()
             require('textcase').setup {}
@@ -179,12 +190,12 @@ return require('packer').startup(function(use)
         }
     end
     }
-    use{"moll/vim-bbye"}
+    use { "moll/vim-bbye" }
     use({
-	"L3MON4D3/LuaSnip",
-	-- follow latest release.
-	tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-	-- install jsregexp (optional!:).
-	run = "make install_jsregexp"
-})
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!:).
+        run = "make install_jsregexp"
+    })
 end)
