@@ -4,6 +4,7 @@ require 'nvim-treesitter.configs'.setup {
         "bash",
         "css",
         "dockerfile",
+        "groovy",
         "html",
         "javascript",
         "jsonc",
@@ -14,13 +15,14 @@ require 'nvim-treesitter.configs'.setup {
         "sql",
         "tsx",
         "twig",
+        "twig",
         "typescript",
         "vim",
         "yaml",
     },
 
     -- Install parsers synchronously (only applied to `ensure_installed`)
-    sync_install = false,
+    sync_install = true,
 
     -- Automatically install missing parsers when entering buffer
     -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
@@ -52,9 +54,4 @@ require 'nvim-treesitter.configs'.setup {
             "php",
         },
     },
-    highlight = {
-        enable = true,   -- false will disable the whole extension
-        disable = { "css" }, -- list of language that will be disabled
-    },
-
 }
