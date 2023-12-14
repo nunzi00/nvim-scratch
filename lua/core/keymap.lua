@@ -94,4 +94,17 @@ vim.keymap.set("n", "bp", "<cmd>bp<cr>")
 vim.keymap.set("n", "bn", "<cmd>bn<cr>")
 vim.keymap.set("n", "be", "<cmd>be<cr>")
 vim.keymap.set("n", "bd", "<cmd>Bdelete<cr>")
+-- Better window navigation
+vim.keymap.set("n", "<S-h>", "<C-w>h")
+vim.keymap.set("n", "<S-j>", "<C-w>j")
+vim.keymap.set("n", "<S-k>", "<C-w>k")
+vim.keymap.set("n", "<S-l>", "<C-w>l")
 
+-- Resize with arrows
+vim.keymap.set("n", "<C-Up>", ":resize -2<CR>")
+vim.keymap.set("n", "<C-Down>", ":resize +2<CR>")
+vim.keymap.set("n", "<C-Left>", ":vertical resize -2<CR>")
+vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
+-- Stay in indent mode
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")

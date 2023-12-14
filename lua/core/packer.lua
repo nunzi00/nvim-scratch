@@ -90,7 +90,8 @@ return require('packer').startup(function(use)
                     })
                 end,
             },
-        }
+        },
+        run = ":TSUpdate"
     }
 
     use {
@@ -153,6 +154,8 @@ return require('packer').startup(function(use)
     use("theprimeagen/refactoring.nvim")
 
     use("tpope/vim-fugitive")
+
+    use ( "lewis6991/gitsigns.nvim" )
 
     use { "nvim-neotest/neotest",
         requires = {

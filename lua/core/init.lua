@@ -85,3 +85,9 @@ vim.cmd [[
     augroup end
 ]]
 
+vim.cmd [[
+  augroup _custom_filetypes
+    autocmd!
+    autocmd BufNewFile,BufRead .env.* setf sh
+  augroup end
+]]

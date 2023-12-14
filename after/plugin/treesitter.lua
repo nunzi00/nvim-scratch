@@ -12,6 +12,7 @@ require 'nvim-treesitter.configs'.setup {
         "markdown",
         "php",
         "sql",
+        "tsx",
         "twig",
         "typescript",
         "vim",
@@ -50,6 +51,10 @@ require 'nvim-treesitter.configs'.setup {
             "xml",
             "php",
         },
+    },
+    highlight = {
+        enable = true,   -- false will disable the whole extension
+        disable = { "css" }, -- list of language that will be disabled
     },
 
 }

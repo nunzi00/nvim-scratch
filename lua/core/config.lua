@@ -1,40 +1,49 @@
-vim.opt.guicursor = ""
+local options = {
+    autochdir = false,
+    backup = false,
+    cmdheight = 2,
+    colorcolumn = { "80", "120" },
+    expandtab = true,
+    fileencoding = "utf-8",
+    guicursor = "",
+    hlsearch = false,
+    ignorecase = true,
+    incsearch = true,
+    nu = true,
+    relativenumber = false,
+    scrolloff = 4,
+    shiftwidth = 4,
+    signcolumn = "yes",
+    smartindent = true,
+    softtabstop = 4,
+    swapfile = false,
+    tabstop = 4,
+    termguicolors = true,
+    undofile = true,
+    updatetime = 50,
+    wrap = true,
+}
 
-vim.opt.nu = true
-vim.opt.relativenumber = false
+for k, v in pairs(options) do
+    vim.opt[k] = v
+end
 
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-
-vim.opt.smartindent = true
-
-vim.opt.wrap = true
-
-vim.opt.swapfile = false
-vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-vim.opt.undofile = true
-
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-
-vim.opt.termguicolors = true
-
-vim.opt.scrolloff = 0
-vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
-vim.opt.updatetime = 50
 
-vim.g.cmp_enabled = true
-vim.g.diagnostics_mode = 3
-vim.g.icons_enabled = true
-vim.g.autopairs_enabled = true
+local goptions = {
+    autopairs_enabled = true,
+    cmp_enabled = true,
+    diagnostics_mode = 3,
+    icons_enabled = true,
+}
 
-vim.opt.colorcolumn = { "120" }
-vim.opt.fileencoding = "utf-8"
+for k, v in pairs(goptions) do
+    vim.g[k] = v
+end
+
+
 vim.filetype.add {
     extension = {
         neon = "yaml",
@@ -45,5 +54,3 @@ vim.filetype.add {
         ["Jenkinsfile"] = "groovy",
     },
 }
-vim.opt.autochdir = false
-
