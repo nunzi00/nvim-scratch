@@ -1,7 +1,7 @@
 local alpha = require("alpha")
-local dashboard = require("alpha.themes.dashboard")
+local startify = require("alpha.themes.startify")
 
-dashboard.section.header.val = {
+startify.section.header.val = {
 	"                                         ",
 	"                                         ",
 	"                                         ",
@@ -15,21 +15,31 @@ dashboard.section.header.val = {
 	"                                         ",
 	"                                         ",
 }
-dashboard.config.opts.noautocmd = true
-dashboard.config.opts.margin = 50
+startify.config.opts.noautocmd = true
+-- startify.config.opts.position = "right"
+startify.config.opts.margin = 100
 
-dashboard.section.buttons.val = {
-
-		dashboard.button("e", "  New file", "<cmd>ene <CR>"),
-		dashboard.button("SPC f f", "󰈞  Find file"),
-		dashboard.button("SPC f o", "󰊄  Recently opened files"),
-		-- dashboard.button("SPC f r", "  Frecency/MRU"),
-		dashboard.button("SPC f g", "󰈬  Find word"),
-		-- dashboard.button("SPC f m", "  Jump to bookmarks"),
-		dashboard.button("SPC s l", "  Open lasts sessions"),
-		dashboard.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
+startify.section.top_buttons.val = {
+	startify.button("e", "  New file", "<cmd>ene <CR>"),
+    { type = "padding", val = 2 },
+	{ type = "text", val = "Search ", opts = { hl = "SpecialComment", position = "center" } },
+	{ type = "text", val = "-------------------------------------------------------------", opts = { hl = "SpecialComment", position = "center" } },
+	startify.button("SPC f f", "󰈞  Find file"),
+	startify.button("SPC f o", "󰊄  Recently opened files"),
+	startify.button("SPC f g", "󰈬  Find word"),
 }
+startify.section.bottom_buttons.val = {
+    { type = "padding", val = 4 },
+	{ type = "text", val = "Sessions", opts = { hl = "SpecialComment", position = "center" } },
+	{ type = "text", val = "-------------------------------------------------------------", opts = { hl = "SpecialComment", position = "center" } },
+	startify.button("SPC s l", "  Open lasts sessions"),
+    { type = "padding", val = 4 },
+	{ type = "text", val = "-------------------------------------------------------------", opts = { hl = "SpecialComment", position = "center" } },
+	startify.button("q", "󰅚  Quit NVIM", ":qa<CR>"),
+}
+startify.section.mru.val = {}
+startify.section.mru_cwd.val = {}
 
-vim.cmd([[autocmd User AlphaReady echo 'ready to coding!!!']])
+vim.cmd([[autocmd User AlphaReady echo 'Happy coding!!!']])
 
-alpha.setup(dashboard.config)
+alpha.setup(startify.config)
