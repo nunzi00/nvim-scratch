@@ -65,6 +65,9 @@ return require('packer').startup(function(use)
             -- Snippets
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
+
+            -- Formatter
+            { "lukas-reineke/lsp-format.nvim" },
         }
     }
 
@@ -115,6 +118,15 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
+    use { "folke/lsp-colors.nvim", config = function()
+        require("lsp-colors").setup {
+            Error       = "#db4b4b",
+            Warning     = "#e0af68",
+            Information = "#0db9d7",
+            Hint        = "#10B981"
+        }
+    end
+    }
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
@@ -152,10 +164,6 @@ return require('packer').startup(function(use)
         },
     })
     use {
-        'stevearc/resession.nvim',
-        config = function() require('resession').setup() end
-    }
-    use {
         'altermo/ultimate-autopair.nvim',
         event = { 'InsertEnter', 'CmdlineEnter' },
         branch = 'v0.6', --recomended as each new version will have breaking changes
@@ -177,20 +185,19 @@ return require('packer').startup(function(use)
             }
         end
     }
+-- Status bar
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
-    use { "folke/lsp-colors.nvim", config = function()
-        require("lsp-colors").setup {
-            Error       = "#db4b4b",
-            Warning     = "#e0af68",
-            Information = "#0db9d7",
-            Hint        = "#10B981"
-        }
-    end
+-- Session
+    use {
+        'stevearc/resession.nvim',
+        config = function() require('resession').setup() end
     }
+-- Buffers
     use { "moll/vim-bbye" }
+-- Snips
     use({
         "L3MON4D3/LuaSnip",
         -- follow latest release.
@@ -198,4 +205,6 @@ return require('packer').startup(function(use)
         -- install jsregexp (optional!:).
         run = "make install_jsregexp"
     })
+-- Markdown
+use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end)

@@ -1,5 +1,6 @@
-require("theprimeagen.set")
-require("theprimeagen.remap")
+require("core.config")
+require("core.keymap")
+require("core.packer")
 
 local augroup = vim.api.nvim_create_augroup
 local ThePrimeagenGroup = augroup('ThePrimeagen', {})
@@ -75,5 +76,12 @@ vim.cmd [[
     autocmd!
     autocmd FileType php :setlocal sw=4 ts=4 sts=4
   augroup end
+]]
+
+vim.cmd [[
+    augroup _yaml_settings
+        autocmd!
+        autocmd FileType yaml :setlocal ts=2 sts=2 sw=2 expandtab
+    augroup end
 ]]
 

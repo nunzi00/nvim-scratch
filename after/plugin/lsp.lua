@@ -51,7 +51,7 @@ lsp.set_preferences({
 
 lsp.on_attach(function(client, bufnr)
     local opts = { buffer = bufnr, remap = false }
-
+    client.resolved_capabilities.document_formatting = true
     vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
     vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
     vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
@@ -59,23 +59,23 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
-    vim.keymap.set("n", "<leader>gd",function() require("telescope.builtin").lsp_definitions() end, opts)
+    vim.keymap.set("n", "<leader>gd", function() require("telescope.builtin").lsp_definitions() end, opts)
     vim.keymap.set("n", "gI", function() vim.lsp.buf.implementation() end, opts)
     vim.keymap.set("n", "<leader>gI", function() require("telescope.builtin").lsp_implementations() end, opts)
-vim.keymap.set("n", "<leader>lR", function() require("telescope.builtin").lsp_references() end, opts)
-vim.keymap.set("n", "<leader>gy", function() require("telescope.builtin").lsp_type_definitions() end, opts)
+    vim.keymap.set("n", "<leader>lR", function() require("telescope.builtin").lsp_references() end, opts)
+    vim.keymap.set("n", "<leader>gy", function() require("telescope.builtin").lsp_type_definitions() end, opts)
     vim.keymap.set("n", "lG", function() vim.lsp.buf.workspace_symbol() end, opts)
- -- vim.keymap.set("n", "<leader>lG", function()
- --        vim.ui.input({ prompt = "Symbol Query: (leave empty for word under cursor)" }, function(query)
- --          if query then
- --            -- word under cursor if given query is empty
- --            if query == "" then query = vim.fn.expand "<cword>" end
- --            require("telescope.builtin").lsp_workspace_symbols {
- --              query = query,
- --              prompt_title = ("Find word (%s)"):format(query),
- --            }
- --        end
- --  end, opts)
+    -- vim.keymap.set("n", "<leader>lG", function()
+    --        vim.ui.input({ prompt = "Symbol Query: (leave empty for word under cursor)" }, function(query)
+    --          if query then
+    --            -- word under cursor if given query is empty
+    --            if query == "" then query = vim.fn.expand "<cword>" end
+    --            require("telescope.builtin").lsp_workspace_symbols {
+    --              query = query,
+    --              prompt_title = ("Find word (%s)"):format(query),
+    --            }
+    --        end
+    --  end, opts)
 
 
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
@@ -91,10 +91,10 @@ vim.keymap.set("n", "<leader>gy", function() require("telescope.builtin").lsp_ty
     vim.keymap.set("n", "<leader>lh", function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("v", "<leader>la", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set(
-	{"n", "x"},
-	"<leader>rr",
-	function() require('telescope').extensions.refactoring.refactors() end
-)
+        { "n", "x" },
+        "<leader>rr",
+        function() require('telescope').extensions.refactoring.refactors() end
+    )
 end)
 
 lsp.setup()
