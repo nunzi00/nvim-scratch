@@ -219,6 +219,9 @@ return require('packer').startup(function(use)
             })
         end,
     }
+
+    use ('sbdchd/neoformat')
+
     --
     -- Status bar
     --
