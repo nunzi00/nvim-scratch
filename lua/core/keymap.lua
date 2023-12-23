@@ -87,6 +87,8 @@ vim.keymap.set('n', '<leader>o', function()
         vim.cmd.Neotree "focus"
     end
 end)
+vim.keymap.set('n','ba',"<esc><cmd>bufdo bd<cr>")
+vim.keymap.set('n','ne',"<esc><cmd>enew<cr>")
 vim.keymap.set("n", "<C-q>", "<cmd>qa!<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>bd<cr>")
 vim.keymap.set("n", "<C-s>", "<cmd>w!<cr>")
