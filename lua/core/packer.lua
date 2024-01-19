@@ -134,12 +134,7 @@ return require("packer").startup(function(use)
 			{ "hrsh7th/cmp-nvim-lua" },
 
 			-- Snippets
-			({ "L3MON4D3/LuaSnip" ,
-		-- follow latest release.
-		tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-		-- install jsregexp (optional!:).
-		run = "make install_jsregexp",
-    }),
+			({ "L3MON4D3/LuaSnip" }),
 			{ "rafamadriz/friendly-snippets" },
 
 			-- Formatter
@@ -238,8 +233,6 @@ return require("packer").startup(function(use)
 	})
     use({"nvimtools/none-ls.nvim"})
 
---	use({ "sbdchd/neoformat", requires = { "mmlb/yamlfmt", "lyz-code/yamlfix" } })
-
 	--
 	-- Status bar
 	--
@@ -263,32 +256,8 @@ return require("packer").startup(function(use)
 	--
 	-- Snipppets
 	--
-	use({
-		"L3MON4D3/LuaSnip",
-		-- follow latest release.
-		tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-		-- install jsregexp (optional!:).
-		run = "make install_jsregexp",
-	})
-    use {
-  'hrsh7th/nvim-cmp',
-  config = function ()
-    require'cmp'.setup {
-    snippet = {
-      expand = function(args)
-        require'luasnip'.lsp_expand(args.body)
-      end
-    },
-
-    sources = {
-      { name = 'luasnip' },
-      -- more sources
-    },
-  }
-  end
-}
-use { 'saadparwaiz1/cmp_luasnip' }
-	-- Markdown
+	use({ "L3MON4D3/LuaSnip" })
+-- 	-- Markdown
 	use({
 		"iamcco/markdown-preview.nvim",
 		run = "cd app && npm install",
@@ -299,4 +268,9 @@ use { 'saadparwaiz1/cmp_luasnip' }
 		end,
 		ft = { "markdown" },
 	})
+     -- Debugger
+  use {'mfussenegger/nvim-dap'}
+  use {'theHamsta/nvim-dap-virtual-text'}
+  use {"rcarriga/nvim-dap-ui"}
+  use({ "folke/neodev.nvim" })
 end)
