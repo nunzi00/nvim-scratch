@@ -95,6 +95,10 @@ local mappings = {
         a = { "<cmd>bufdo<cr>", "Buffer Close All" },
     },
     -- ["d"]       = { '[["_d]]', "_d" },
+    ["d"] = {
+        name = "Debug",
+        u = {"<cmd>lua require('dapui').toggle()<cr>", "Toggle UI"},
+    },
     ["e"] = { "<cmd>Neotree toggle<cr>", "Neotree toggle" },
     ["j"] = { "<cmd>lprev<CR>zz", "lprevzz" },
     ["k"] = { "<cmd>lnext<CR>zz", "lnextzz" },
