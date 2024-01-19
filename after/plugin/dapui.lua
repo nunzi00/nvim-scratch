@@ -89,3 +89,5 @@ require("dapui").setup({
     max_value_lines = 100, -- Can be integer or nil.
   }
 })
+
+vim.keymap.set('n', '<leader>du', "<esc><cmd>lua require('dapui').toggle()<cr>")
