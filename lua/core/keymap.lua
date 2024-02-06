@@ -111,3 +111,12 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>")
 -- Stay in indent mode
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
+
+vim.keymap.set("n", "<leader>u", ":call phpactor#UseAdd()<CR>") -- Include use statemen
+vim.keymap.set("n", "<leader>mm", ":call phpactor#ContextMenu()<CR>") -- Invoke the context menu
+vim.keymap.set("n", "<leader>nn", ":call phpactor#Navigate()<CR>") -- Invoke the navigation menu
+vim.keymap.set("n", "<leader>ee", ":call phpactor#ExtractExpression()<CR>")
+vim.keymap.set("v", "<leader>ee", ":call phpactor#ExtractExpression(v:true)<CR>") -- Extract
+vim.keymap.set("v", "<leader>ee", ":call phpactor#ExtractExpression(v:true)<CR>")
+vim.keymap.set("v", "<leader>em", ":call <C-u>PhpactorExtractMethod<CR>")
+vim.keymap.set("v", "<leader>ec", ":call <C-u>PhpactorExtractConstant<CR>")
