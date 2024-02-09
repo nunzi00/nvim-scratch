@@ -9,6 +9,7 @@ vim.keymap.set("n", "<leader>ff", "<esc><cmd>Telescope find_files<cr>")
 vim.keymap.set('n', '<leader>fg', "<esc><cmd>Telescope live_grep<cr>")
 vim.keymap.set('n', '<leader>fb', "<esc><cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>fo", ":Telescope oldfiles<cr>")
+vim.keymap.set("n", "<leader>fl", ":Telescope resume<cr>")
 vim.keymap.set(
 	{"n", "x"},
 	"<leader>rr",

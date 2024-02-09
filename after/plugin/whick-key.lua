@@ -121,6 +121,7 @@ local mappings = {
         f = { "<cmd>Telescope find_files find_command=rg,--files prompt_prefix=🔍<cr>", "Telescope find files" },
         g = { "<cmd>Telescope live_grep prompt_prefix=🔍<cr>", "Telescope live grep" },
         h = { "<cmd>Telescope help_tags<cr>", "Telescope help tags" },
+        l = { "<cmd>Telescope resume<cr>", "Telescope resume last" },
         o = { "<cmd>Telescope oldfiles prompt_prefix=🔍<cr>", "Telescope Old Files" },
         r = { "<cmd>TextCaseOpenTelescopeQuickChange<CR>", "Telescope TextCase" },
         w = { "<cmd>Telescope grep_string<CR>", "Telescope Grep current word" },
