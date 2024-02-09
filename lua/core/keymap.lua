@@ -61,7 +61,7 @@ vim.keymap.set("n", "<leader>ct", function()
 end)
 vim.keymap.set("n", "<leader>psa", function()
     local file = vim.fn.expand "%"
-    local command = string.format("!docker exec gf_back sh -c 'php vendor/bin/psalm -c psalm-local.xml'", file)
+    local command = string.format("!docker exec gf_back sh -c 'php vendor/bin/psalm -c psalm.xml'", file)
     -- or                            , branch = '0.1.x',
     vim.notify(command)
     vim.cmd(command)
