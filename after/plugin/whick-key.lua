@@ -105,7 +105,6 @@ local mappings = {
     -- ["o"]       = { "", "" },
     ["q"] = { "<cmd>wqall!<CR>", "Quit" }, -- Quit Neovim after saving the file
     ["Q"] = { "<nop>", "Close modal" },    -- Quit Neovim after saving the file
-    -- ["r"]       = { "[[:%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left>]]", "Replace word" },
     -- ["u"]       = { "", "" },
     -- ["y"]       = { "", "" },
     -- ["Y"]       = { "", "" },
