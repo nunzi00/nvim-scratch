@@ -92,7 +92,7 @@ local mappings = {
         w = { "<cmd>tabn<cr>", "TAB Next" },
         e = { "<cmd>tabe<cr>", "TAB New" },
         r = { "<cmd>tabo<cr>", "TAB Close Others" },
-        a = { "<cmd>bufdo<cr>", "Buffer Close All" },
+        a = { "<cmd>bufdo bd<cr>", "Buffer Close All" },
     },
     -- ["d"]       = { '[["_d]]', "_d" },
     ["d"] = {
@@ -151,7 +151,7 @@ local mappings = {
     },
     ["s"] = {
         name = "Sessions",
-        d = { "<cmd>lua require('resession').delete()", "Delete" },
+        d = { "<cmd>lua require('resession').delete()<cr>", "Delete" },
         l = { "<cmd>lua require('resession').load()<cr>", "Load" },
         s = { "<cmd>lua require('resession').save()<cr>", "Save" },
     },
@@ -173,6 +173,7 @@ local mappings = {
         d = { "<cmd>lua require('trouble').toggle('document_diagnostics')<cr>", "QuixkFix Document" },
         q = { "<cmd>TroubleToggle quickfix<cr>", "Toggle QuixkFix" },
     },
+    ["P"] = { "<cmd><Cmd>Telescope registers<CR>", "Telescope registers" },
 
 }
 

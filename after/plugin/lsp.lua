@@ -12,6 +12,7 @@ lsp.ensure_installed({
     "jsonls",
     "lua_ls",
     "phpactor",
+    "psalm",
     "sqlls",
     "tsserver",
     "vimls",
@@ -63,9 +64,9 @@ lsp.on_attach(function(client, bufnr)
     vim.keymap.set("n", "<leader>ld", function() vim.diagnostic.open_float() end, opts)
     vim.keymap.set("n", "<leader>li", "<cmd>LspInfo<cr>", opts)
 
-    vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+    -- vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
     vim.keymap.set("n", "<leader>gd", function() require("telescope.builtin").lsp_definitions() end, opts)
-    vim.keymap.set("n", "gI", function() vim.lsp.buf.implementation() end, opts)
+    -- vim.keymap.set("n", "gI", function() vim.lsp.buf.implementation() end, opts)
     vim.keymap.set("n", "<leader>gI", function() require("telescope.builtin").lsp_implementations() end, opts)
     vim.keymap.set("n", "<leader>lR", function() require("telescope.builtin").lsp_references() end, opts)
     vim.keymap.set("n", "<leader>gy", function() require("telescope.builtin").lsp_type_definitions() end, opts)
@@ -84,15 +85,15 @@ lsp.on_attach(function(client, bufnr)
 
 
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-    vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
-    vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
-    vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
-    vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
+    -- vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
+    -- vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
+    -- vim.keymap.set("n", "<leader>vrr", function() vim.lsp.buf.references() end, opts)
+    -- vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("n", "<leader>lD", function() require("telescope.builtin").diagnostics() end, opts)
-    vim.keymap.set("n", "<leader>la", function() vim.lsp.buf.code_action() end, opts)
+    -- vim.keymap.set("n", "<leader>la", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)
-    vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end, opts)
+    -- vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("n", "<leader>lh", function() vim.lsp.buf.signature_help() end, opts)
     vim.keymap.set("v", "<leader>la", function() vim.lsp.buf.code_action() end, opts)
     vim.keymap.set(
