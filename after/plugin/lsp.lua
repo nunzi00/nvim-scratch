@@ -12,7 +12,7 @@ lsp.ensure_installed({
     "jsonls",
     "lua_ls",
     "phpactor",
-    "psalm",
+    -- "psalm",
     "sqlls",
     "tsserver",
     "vimls",
