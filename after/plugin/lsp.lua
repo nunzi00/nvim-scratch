@@ -8,7 +8,7 @@ lsp.ensure_installed({
     "docker_compose_language_service",
     "dockerls",
     "eslint",
-    -- "intelephense",
+    "intelephense",
     "jsonls",
     "lua_ls",
     "phpactor",
