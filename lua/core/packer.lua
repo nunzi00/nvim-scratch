@@ -243,12 +243,12 @@ return require("packer").startup(function(use)
 	--
 	-- Session
 	--
-	use({
-		"stevearc/resession.nvim",
-		config = function()
-			require("resession").setup()
-		end,
-	})
+	-- use({
+	-- 	"stevearc/resession.nvim",
+	-- 	config = function()
+	-- 		require("resession").setup()
+	-- 	end,
+	-- })
 	--
 	-- Buffers
 	--
