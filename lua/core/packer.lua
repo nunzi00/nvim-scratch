@@ -273,4 +273,5 @@ return require("packer").startup(function(use)
   use {'theHamsta/nvim-dap-virtual-text'}
   use {"rcarriga/nvim-dap-ui"}
   use({ "folke/neodev.nvim" })
+  use({"nvim-neotest/nvim-nio"})
 end)
