@@ -3,7 +3,7 @@ require 'nvim-treesitter.configs'.setup {
     ensure_installed = {
         "bash",
         "css",
-        "dockerfile",
+        -- "dockerfile",
         "groovy",
         "html",
         "javascript",

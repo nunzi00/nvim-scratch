@@ -174,7 +174,8 @@ return require("packer").startup(function(use)
 			"nvim-lua/plenary.nvim",
 			"nvim-treesitter/nvim-treesitter",
 			"antoinemadec/FixCursorHold.nvim",
-			"folke/neodev.nvim",
+			-- "folke/neodev.nvim",
+			"folke/lazydev.nvim",
 		},
 	})
 
@@ -272,6 +273,7 @@ return require("packer").startup(function(use)
   use {'mfussenegger/nvim-dap'}
   use {'theHamsta/nvim-dap-virtual-text'}
   use {"rcarriga/nvim-dap-ui"}
-  use({ "folke/neodev.nvim" })
+  -- use({ "folke/neodev.nvim" })
+  use({ "folke/lazydev.nvim" })
   use({"nvim-neotest/nvim-nio"})
 end)
