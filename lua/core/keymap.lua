@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>Y", [["+Y]])
 -- This is going to get me cancelled
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
-vim.keymap.set("n", "Q", "<nop>")
+-- vim.keymap.set("n", "Q", "<nop>")
 -- vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 vim.keymap.set("n", "<leader>lf", vim.lsp.buf.format)
 -- vim.keymap.set("n", "<leader>lf", "<cmd>Neoformat<cr>")
@@ -25,7 +25,7 @@ vim.keymap.set("n", "<C-k>", "<cmd>cnext<CR>zz")
 vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
-vim.keymap.set("n", "<leader>P", "<cmd>Telescope registers<CR>")
+-- vim.keymap.set("n", "<leader>P", "<cmd>Telescope registers<CR>")
 
     vim.keymap.set(
 	{"n", "x"},
@@ -87,16 +87,16 @@ vim.keymap.set('n', '<leader>o', function()
         vim.cmd.Neotree "focus"
     end
 end)
-vim.keymap.set('n','ba',"<esc><cmd>bufdo bd<cr>")
+-- vim.keymap.set('n','ba',"<esc><cmd>bufdo bd<cr>")
 vim.keymap.set('n','ne',"<esc><cmd>enew<cr>")
 vim.keymap.set("n", "<C-q>", "<cmd>qa!<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>bd<cr>")
 vim.keymap.set("n", "<C-s>", "<cmd>w!<cr>")
 vim.keymap.set("n", "|", "<cmd>vs<cr>")
-vim.keymap.set("n", "bp", "<cmd>bp<cr>")
-vim.keymap.set("n", "bn", "<cmd>bn<cr>")
-vim.keymap.set("n", "be", "<cmd>be<cr>")
-vim.keymap.set("n", "bd", "<cmd>Bdelete<cr>")
+-- vim.keymap.set("n", "bp", "<cmd>bp<cr>")
+-- vim.keymap.set("n", "bn", "<cmd>bn<cr>")
+-- vim.keymap.set("n", "be", "<cmd>be<cr>")
+-- vim.keymap.set("n", "bd", "<cmd>Bdelete<cr>")
 -- Better window navigation
 vim.keymap.set("n", "<S-h>", "<C-w>h")
 vim.keymap.set("n", "<S-j>", "<C-w>j")
